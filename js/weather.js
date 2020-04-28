@@ -14,7 +14,6 @@ function getWeather(lat, lng){
 			const place = json.name;
 			const skyCondition = json.weather[0].main;
 			const nation = json.sys.country;
-			
 			weather.innerText = `${skyCondition} ${temperature} @ ${place} in ${nation}`;
 		});
 }
@@ -35,8 +34,8 @@ function handleGeoSucces(position){
         //latitude,
         //longitude
     };
-		saveCoords(coordsObj);
-		getWeather(latitude, longitude);
+	saveCoords(coordsObj);
+	getWeather(latitude, longitude);
 }
 
 function handleGeoError(){
@@ -52,8 +51,8 @@ function loadCoords(){
     if(loadedCoords === null){
         askForCoords();
     } else {
-				const parseCoords = JSON.parse(loadedCoords);
-				getWeather(parseCoords.latitude, parseCoords.longitude);
+		const parseCoords = JSON.parse(loadedCoords);
+		getWeather(parseCoords.latitude, parseCoords.longitude);
     }
 }
 
