@@ -1,6 +1,6 @@
-const toDoForm = document.querySelector('.js-toDoForm'),
-			toDoInput = toDoForm.querySelector('input'),
-			toDoList = document.querySelector('.js-toDoList');
+const toDoForm = document.querySelector('.js-toDoForm');
+const toDoInput = toDoForm.querySelector('input');
+const toDoList = document.querySelector('.js-toDoList');
 const TODOS_LS = 'toDos';
 
 let toDos = []; //해야할 일을 생성했을 때 배열에 추가
