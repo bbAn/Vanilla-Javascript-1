@@ -19,7 +19,7 @@ function getWeather(lat, lng){
 }
 
 function saveCoords(coordsObj){
-    localStorage.setItem(COORDS, JSON.stringify(coordsObj));
+    localStorage.setItem(COORDS, JSON.stringify(coordsObj)); // JSON.stringify()자바스크립트의 값을 JSON 문자열로 변환
 }
 
 function handleGeoSucces(position){
@@ -29,10 +29,10 @@ function handleGeoSucces(position){
         latitude: latitude,
         longitude: longitude
 
-        //객체의 변수 이름과 객체의 키의 이름을 같게 저장할때는 
-        //아래같이 사용 가능
-        //latitude,
-        //longitude
+        // 객체의 변수 이름과 객체의 키의 이름을 같게 저장할때는 
+        // 아래같이 사용 가능
+        // latitude,
+        // longitude
     };
 	saveCoords(coordsObj);
 	getWeather(latitude, longitude);
@@ -51,7 +51,7 @@ function loadCoords(){
     if(loadedCoords === null){
         askForCoords();
     } else {
-		const parseCoords = JSON.parse(loadedCoords);
+		const parseCoords = JSON.parse(loadedCoords);  // JSON.parse() json 객체로 변환
 		getWeather(parseCoords.latitude, parseCoords.longitude);
     }
 }
